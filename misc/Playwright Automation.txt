@@ -41,6 +41,10 @@ Post config command to run scripts in terminal : npm run regression
 Command to Start Jenkins through cmd : Locate to folder where jenkins.war file is located and open cmd > Type : java -jar jenkins.war -httpPort=8085 (Port is configurable)
 Command to stop jenkins : ctrl+c
 Command to install cucumber : npm install @cucumber/cucumber and then install Cucumber plugin in code editor
+Command to run feature file post setup in package.json file : npm run test:login:headed
+Command to generate report feature file post setup in package.json file : npm run report:generate
+Command to open report feature file post setup in package.json file : npm run report:open
+Command to Run ALL feature files in headed mode with Allure reporting : npm run test:all:headed
 Command to generate report in Cucumber : npx cucumber-js features/eCommerce.feature --format html:cucumber-report.html
 Command to install Claude tool : npm install -g @anthropic-ai/claude-code
 Command to run claude: Claude
