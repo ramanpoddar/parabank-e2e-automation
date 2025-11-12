@@ -1,0 +1,81 @@
+1. JavaScript : is widely used in web development to create interactive and dynamic websites.
+JavaScript is a versatile, dynamically typed programming language that brings life to web pages by making them interactive. 
+It is used for building interactive web applications, supports both client-side and server-side development, and integrates seamlessly with HTML, CSS, and a rich standard library. 
+Client Side: On the client side, JavaScript works along with HTML and CSS. 
+HTML adds structure to a web page, CSS styles it, and JavaScript brings it to life by allowing users to interact with elements on the page, 
+such as actions on clicking buttons, filling out forms, and showing animations. JavaScript on the client side is directly executed in the user's browser.
+Server Side: On the Server side (on Web Servers), JavaScript is used to access databases, file handling, and security features to send responses, to browsers.
+2. Frameworks : like React and Angular make front-end development faster, while Node.js is used for building server-side applications.
+3. Command to run JS file : node basic.js
+4. Data Types : In JS, its not needed to specify data types like string, int, or boolean — JavaScript detects the type automatically when you assign a value.
+i. Primitive Data Types - Numberic Type [int, bigint] and Non Numeric type [String, NULL, Boolean, Undefined, Symbol]
+ii. Non Primitive Data Types - Object, Arrays, Functions, Regular Expression, Data Object
+5. Variables : A variable is like a container that holds data that can be reused or updated later in the program. 
+In JavaScript, a variable is used to store data values — like numbers, text, or objects.
+In JavaScript, variables are declared using the keywords var, let, or const.
+var Keyword : The var keyword is used to declare a variable. It has a function-scoped or globally-scoped behaviour. Reassigning is allowed.
+var → Old version of let; avoid it unless maintaining legacy code.
+var n = 5;
+console.log(n);
+let Keyword : The let keyword is introduced in ES6, has block scope and cannot be re-declared in the same scope. Value can be updated but can not redeclare.
+let → For values that can change (like counters or user input).
+let  n= 10;
+n = 20; // Value can be updated
+// let n = 15; //can not redeclare
+console.log(n)
+const Keyword : The const keyword declares variables that cannot be reassigned. It's block-scoped as well.
+const → For values that shouldn’t change (like API URLs or fixed config).
+const n = 100;
+// n = 200; This will throw an error
+console.log(n)
+5. Immutable: In programming, an immutable object is one whose state cannot be changed after it is created. 
+ This is in contrast to a mutable object, which can be modified at any point after creation.
+6. Primitive Datatypes : Primitive datatypes represent single values and are immutable.
+7. Non-Primitive Datatypes : Non-primitive types are objects and can store collections of data or more complex entities.
+7.1. Object: Represents key-value pairs.
+7.2. Array: Represents an ordered list of values.
+7.3. Function: Represents reusable blocks of code. Functions in JavaScript are reusable blocks of code designed to perform specific tasks. 
+They allow you to organize, reuse, and modularize code.
+8. == (Double Equals) → Loose Equality : It compares only values, not data types. If types are different, JavaScript automatically converts (type coercion) before comparing.
+9. === (Triple Equals) → Strict Equality : It compares both value and data type. No type conversion — both sides must be exactly the same.
+10. null : The 'null' data type defines a special value that represents nothing, or empty value.
+11. undefined : A variable that has been declared but not initialized with a value is automatically assigned the undefined value. 
+It means the variable exists, but it has no value assigned to it.
+12. JavaScript Operators : 
+Arithmetic Operators: perform mathematical calculations like addition, subtraction, multiplication, etc. eg. + - * /
+Assignment operators: are used to assign values to variables. They can also perform operations like addition or multiplication while assigning the value. eg. +=, *=
+Comparison operators: compare two values and return a boolean (true or false). They are useful for making decisions in conditional statements. eg. >= ===
+Logical operators: are mainly used to perform the logical operations that determine the equality or difference between the values. eg. && || AND OR
+Comma Operator: (,) mainly evaluates its operands from left to right sequentially and returns the value of the rightmost operand. 
+Unary operators: operate on a single operand (e.g., increment, decrement).
+Relational Operators, BigInt Operators, String Operators, Chaining Operator
+13. Ternary operator: is a shorter form of if-else statement. The ternary operator is a shorthand for conditional statements.
+const age = 18;
+const status = age >= 19 ? "Adult" : "Minor";
+console.log(status);
+Explanation : age >= 19 → This is the condition., age is 18, 18 >= 19 → false, ? "Adult" : "Minor" → This is called the ternary operator.
+Syntax: condition ? valueIfTrue : valueIfFalse, Since the condition is false, the value after : is used., So status will be "Minor".
+14. Control Statements : Conditional Statement and Iterative Statement : if statement, if-else statement, switch statement, ternary operator, for loop, while loop, and do-while loop
+break; // stops further execution, default executes if no case matches.
+15. Array : An array is a special variable or container that can hold multiple values at once, instead of storing each value in a separate variable.
+Each value in the array has a unique index number (starting from 0) so you can easily access or change it. An array is like a list or collection of items stored together in order.
+An array is a data structure that stores a collection of elements (values or variables), each identified by an index or key.
+16. JavaScript Array Methods : JavaScript provides a wide variety of array methods. These methods allow you to add, remove, find, and transform array elements with ease.
+eg - .length(), .toString(), .join(), delete(), .concat(), .push(), .unshift(), .pop(), .shift(), .splice(), slice(), map(), filter(), reduce(), reverse(), value(),
+17. Function : Parameter → name (placeholder inside the function).
+Argument → "Alice" (real value given at call time).
+18. Types of Function : Named Function and Anonymous Function, Constructor Function, async Function, callback function.
+19. Object : An object is a dynamic data structure that stores related data as key-value pairs, where each key uniquely identifies its value. 
+Properties can be added, changed, or removed at any time.
+20. Object Constructor : A constructor function is a special type of function in JavaScript that is used to create and initialize objects.
+It is automatically executed when a new object is created from a class.
+21. Class Getters and Setters : We can use getter and setter methods to get the value of an object and set the value of an object.  99
+We can use the get keyword for the getter method and the set keyword for the setter methods
+22. Access modifiers : in JavaScript play a significant role in controlling the visibility and accessibility of class members.
+Members marked as public can be accessed from anywhere. Public members are the default in JavaScript classes.
+Members marked as private are only accessible within the class itself. Private members are marked with the # symbol.
+Members marked as protected are accessible within the class and its subclasses. 
+23. Callback : In JavaScript, a callback function is a function you pass to another function — and it runs after the first one finishes.
+24. Promises : Handles success/failure of async work
+25. Async/Await : async function that handles asynchronous tasks. await tells JS to wait until the promise finishes before going to the next step.
+26. Event Loop : The event loop is like a manager in a restaurant who makes sure that your orders (tasks) are handled in order, and no one waits unnecessarily.

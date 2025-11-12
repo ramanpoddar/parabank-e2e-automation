@@ -1,0 +1,79 @@
+Demo Site : https://demoblaze.com/index.html || https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+            https://demo.nopcommerce.com/register || https://testautomationpractice.blogspot.com/
+            https://www.jquery-az.com/boots/demo.php?ex=63.0_2 || https://ui.vision/demo/webtest/frames/
+Pre-requisites : Playwright URL - https://playwright.dev
+1. node JS [Node.js is a runtime environment that allows you to run JavaScript on the server-side, outside of the browser.]
+2. VSCode
+3. Create folder in local system and open it from vscode
+4. Install Playwright using terminal : npm init playwright@latest [npm - node package manager]
+
+Playwright Commands :
+Command to check playwright and node js version : npm playwright -v , node -v
+Command to install playwright in IDE : npm init playwright@latest
+Command to run all test in headeless mode: npx playwright test
+Command to run all test in browser mode : npx playwright test --headed
+Command to run test in debug mode : npx playwright test --debug
+Command to open html report : npx playwright show-report
+Command to run specific test : npx playwright test HomePageTest.spec.js
+Command to run specific test in specific browser: npx playwright test HomePageTest.spec.js --project chromium
+Command to run specific test in specific browser in headed mode: npx playwright test HomePageTest.spec.js --project chromium --headed
+Command to run specific test in specific browser in headed and debug mode: npx playwright test HomePageTest.spec.js --project chromium --headed --debug
+Command to record steps automatically : npx playwright codegen
+Command to record steps automatically and save automatically in file: npx playwright codegen -o tests/codegen.spec.js [tests/codegen.spec.js - Folder and filename]
+Command to record steps automatically with default language as Javascript : npx playwright codegen --target javascript
+Command to record steps automatically with default browser as chromium : npx playwright codegen --browser chromium
+Command to record steps automatically in device : npx playwright codegen --device "iPhone 13"
+Command to record steps automatically in specific resolution : npx playwright codegen --viewport-size "1280,720"
+Command to run test in UI Test Runner and see execution step by step : npx playwright test --ui
+Command to install allure : npm i -D @playwright/test allure-playwright
+Install allure via scoop : # Install Scoop if not already installed
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+iwr -useb get.scoop.sh | iex
+# Install Allure using Scoop
+scoop install allure
+# verify Installation 
+ allure --version
+Command to run script : npx playwright test UIBasictest.spec.js --reporter=line,allure-playwright
+Command to Generate Report : allure generate ./allure-results --clean 
+Command to Open Report : allure open
+Steps Create custom scripts in package.json file to run scripts : Open package.json file >> Find -- "scripts": { "regression" : "npx playwright test"} [accordingly add command to run desired scripts]
+Post config command to run scripts in terminal : npm run regression
+Command to Start Jenkins through cmd : Locate to folder where jenkins.war file is located and open cmd > Type : java -jar jenkins.war -httpPort=8085 (Port is configurable)
+Command to stop jenkins : ctrl+c
+Command to install cucumber : npm install @cucumber/cucumber and then install Cucumber plugin in code editor
+Command to generate report in Cucumber : npx cucumber-js features/eCommerce.feature --format html:cucumber-report.html
+Command to install Claude tool : npm install -g @anthropic-ai/claude-code
+Command to run claude: Claude
+Command to install Playwright Test Agents : npx playwright init-agents --loop=vscode
+Steps to Install MCP Server in VSCode : Install Github Copilot > Open Agent Mode > Click on Setting Icon in Agent Mode > In Configure Tool Window Click on Add MCP Server Icon >
+Click on NPM Package Option > Enter @playwright/mcp > Press Enter > click Allow > Select Local Workspace and Click Enter > Wait for mcp.json file to create
+
+Notes:
+1. page fixture → Your browser tab — lets you visit websites and interact with them.
+   test → Defines a test case — like writing step-by-step tasks to check something works.
+   expect (assertion) → Checks if something is correct — like confirming a button is visible or a text appears.
+   async await → Allows waiting — so actions like page loading or clicking finish before moving on.
+   async → When we interact with a browser using tools like Playwright, most actions — like loading a page, clicking a button, 
+   or waiting for an element — don’t happen instantly. They take some time.In JavaScript, asynchronous operations let your code keep running 
+   without waiting for each step to finish — instead of freezing the app, it moves on and comes back to the result when it’s ready.
+   Real-world example of async:
+   Imagine ordering food at a restaurant — instead of standing by the counter waiting, you place the order (async action) and move on. 
+   The server (browser) calls you when the food is ready.
+2. code generator, buil in locators, hard and soft assertions,
+3. css locator way: ul>li label input  or //ul/li/a/label/input,
+4. page.$$, textcontent, for of loop, Before and After hooks
+5. XPath Locator to locate using text : //button[normalize-space()="Simple Alert"]
+5. playwright.config.js : In this config file, configure browser to test and headless mode inside use block - headless : false. 
+6. Value check → await inside ; Condition wait → await outside
+7. features -> Support folder - Tags, Hooks
+
+git command:
+Initialize Git: git init
+Check file status: git status
+Add file: git add tests/Alert.spec.js
+Commit changes: git commit -m "Your message here"
+Connect to remote repo: (only once) :git remote add origin <repo-url>
+Push to remote repo: git push origin main
+Get User email : git config --global user.email
+Get User name : git config user.name
+Delete file : git rm filename
