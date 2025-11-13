@@ -3,92 +3,50 @@ class BasePage {
     this.page = page;
   }
 
-  /**
-   * Navigate to a specific URL
-   * @param {string} url - The URL to navigate to
-   */
+  // Go to a URL
   async navigateTo(url) {
     await this.page.goto(url, { waitUntil: 'networkidle' });
   }
 
-  /**
-   * Wait for element to be visible
-   * @param {string} selector - The selector of the element
-   * @param {number} timeout - Timeout in milliseconds
-   */
+  // Wait until an element is present
   async waitForElement(selector, timeout = 5000) {
     await this.page.waitForSelector(selector, { timeout });
   }
 
-  /**
-   * Click on an element
-   * @param {string} selector - The selector of the element
-   */
+  // Click an element
   async click(selector) {
     await this.waitForElement(selector);
     await this.page.click(selector);
   }
 
-  /**
-   * Fill input field
-   * @param {string} selector - The selector of the element
-   * @param {string} text - The text to fill
-   */
+  // Fill an input
   async fill(selector, text) {
     await this.waitForElement(selector);
     await this.page.fill(selector, text);
   }
 
-  /**
-   * Get text from an element
-   * @param {string} selector - The selector of the element
-   */
+  // Read text content
   async getText(selector) {
     await this.waitForElement(selector);
-    return await this.page.textContent(selector);
+    return this.page.textContent(selector);
   }
 
-  /**
-   * Check if element is visible
-   * @param {string} selector - The selector of the element
-   */
+  // Check visibility
   async isElementVisible(selector) {
     try {
       await this.waitForElement(selector, 3000);
-      return await this.page.isVisible(selector);
-    } catch {
+      return this.page.isVisible(selector);
+    } catch (e) {
       return false;
     }
   }
 
-  /**
-   * Get attribute value
-   * @param {string} selector - The selector of the element
-   * @param {string} attribute - The attribute name
-   */
-  async getAttribute(selector, attribute) {
-    await this.waitForElement(selector);
-    return await this.page.getAttribute(selector, attribute);
-  }
-
-  /**
-   * Get current page URL
-   */
+  // Get current URL
   async getCurrentURL() {
     return this.page.url();
   }
 
-  /**
-   * Get page title
-   */
-  async getPageTitle() {
-    return await this.page.title();
-  }
-
-  /**
-   * Take a screenshot
-   * @param {string} filename - The filename for the screenshot
-   */
+  // Take a screenshot (helper)
   async takeScreenshot(filename) {
     await this.page.screenshot({ path: `./screenshots/${filename}.png`, fullPage: true });
   }
